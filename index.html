@@ -1,1 +1,2423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veniqe by AK | Premium Indian Women’s Fashion</title>
+  <meta name="description" content="Shop elegant sarees, kurtas and contemporary Indian fashion from Veniqe by AK. Discover curated styles designed for everyday elegance and special occasions." />
+  
+  <!-- Google Fonts: Cormorant Garamond (Editorial Luxury Serif) + Montserrat (Refined Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ==========================================================
+       1. CSS VARIABLES & LUXURY DESIGN TOKENS
+       ========================================================== */
+    :root {
+      --bg-dark: #0F0E0E;
+      --bg-surface: #171615;
+      --bg-card: rgba(26, 24, 23, 0.72);
+      --glass-bg: rgba(20, 19, 18, 0.78);
+      --glass-border: rgba(226, 209, 180, 0.14);
+      --glass-highlight: rgba(255, 255, 255, 0.04);
+      
+      --text-main: #F4EFEA;
+      --text-muted: #A39D94;
+      --text-dim: #726C64;
+      
+      --gold-primary: #D4AF37;
+      --gold-light: #E7CCA0;
+      --gold-glow: rgba(212, 175, 55, 0.22);
+      --wine-accent: #581C25;
+      --wine-light: #8E2B38;
+      
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, sans-serif;
+      
+      --trans-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 15px;
+    }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    /* Subtle Silk Noise Grain Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 0);
+      background-size: 24px 24px;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--trans-smooth);
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Utilities */
+    .container {
+      width: 90%;
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+    .section-spacing {
+      padding: 100px 0;
+    }
+    .text-gold {
+      color: var(--gold-light);
+    }
+    .tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 2.6rem;
+      font-weight: 400;
+      margin-bottom: 24px;
+      line-height: 1.15;
+    }
+
+    /* Glass Effect Class */
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Primary Luxury Buttons */
+    .btn-luxury {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 34px;
+      font-size: 0.76rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid var(--gold-light);
+      background: rgba(231, 204, 160, 0.08);
+      backdrop-filter: blur(6px);
+      color: var(--text-main);
+      transition: var(--trans-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-luxury:hover {
+      background: var(--gold-light);
+      color: var(--bg-dark);
+      box-shadow: 0 0 25px var(--gold-glow);
+    }
+    .btn-luxury-solid {
+      background: var(--gold-light);
+      color: var(--bg-dark);
+      border-color: var(--gold-light);
+    }
+    .btn-luxury-solid:hover {
+      background: #dfbe8d;
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-main);
+      backdrop-filter: blur(6px);
+      padding: 13px 28px;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .btn-outline:hover {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+    }
+
+    /* ==========================================================
+       2. TOP BAR & NAVIGATION
+       ========================================================== */
+    .top-banner {
+      background: linear-gradient(90deg, #181514, #2a1a1f, #181514);
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    header.main-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--trans-smooth);
+      background: rgba(15, 14, 14, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 84px;
+    }
+
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .brand-logo-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      letter-spacing: 0.16em;
+      font-weight: 500;
+      color: #fff;
+    }
+    .brand-logo-sub {
+      font-size: 0.58rem;
+      letter-spacing: 0.38em;
+      color: var(--gold-light);
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+    .nav-links li a {
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      padding: 6px 0;
+      position: relative;
+    }
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold-light);
+      transition: var(--trans-smooth);
+    }
+    .nav-links li a:hover {
+      color: var(--gold-light);
+    }
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-icon-btn {
+      position: relative;
+      padding: 6px;
+      color: var(--text-main);
+      transition: var(--trans-smooth);
+    }
+    .nav-icon-btn:hover {
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .badge-count {
+      position: absolute;
+      top: 0;
+      right: -2px;
+      background: var(--wine-accent);
+      color: var(--text-main);
+      font-size: 0.6rem;
+      font-weight: 600;
+      min-width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold-light);
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+    }
+
+    /* ==========================================================
+       3. HERO SECTION
+       ========================================================== */
+    .hero-section {
+      position: relative;
+      height: 90vh;
+      min-height: 640px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #0b0a0a;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(15, 14, 14, 0.88) 18%, rgba(15, 14, 14, 0.45) 60%, rgba(15, 14, 14, 0.75)),
+        url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=2000&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center 25%;
+      filter: saturate(1.05);
+      transform: scale(1.03);
+      animation: heroZoom 14s infinite alternate ease-in-out;
+    }
+    @keyframes heroZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      padding: 0 20px;
+    }
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 1.08;
+      margin-bottom: 22px;
+      color: #fff;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: #d1cbc4;
+      line-height: 1.7;
+      margin-bottom: 34px;
+      font-weight: 300;
+    }
+    .hero-cta-group {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================================================
+       4. EDITORIAL COLLECTIONS BANNER
+       ========================================================== */
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .collection-card {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+    }
+    .collection-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .collection-card:hover img {
+      transform: scale(1.07);
+    }
+    .collection-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15,14,14,0.1) 40%, rgba(15,14,14,0.92) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      transition: var(--trans-smooth);
+    }
+    .collection-card:hover .collection-overlay {
+      background: linear-gradient(180deg, rgba(15,14,14,0.2) 30%, rgba(88,28,37,0.7) 100%);
+    }
+    .collection-title {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .collection-sub {
+      font-size: 0.78rem;
+      color: #ded6cc;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    .collection-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==========================================================
+       5. PRODUCT GRIDS & CARDS
+       ========================================================== */
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .category-tabs {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .cat-tab {
+      padding: 8px 18px;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 40px;
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-muted);
+      white-space: nowrap;
+      transition: var(--trans-smooth);
+    }
+    .cat-tab.active, .cat-tab:hover {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    .sort-filter-group {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .select-luxury {
+      background: var(--bg-surface);
+      border: 1px solid var(--glass-border);
+      color: var(--text-main);
+      padding: 8px 16px;
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      border-radius: var(--radius-sm);
+      outline: none;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px 24px;
+    }
+
+    .product-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: var(--trans-smooth);
+      background: rgba(25, 23, 22, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .product-card:hover {
+      border-color: rgba(212, 175, 55, 0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+    }
+    .product-media {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background-color: #1a1817;
+    }
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-card:hover .product-media img {
+      transform: scale(1.06);
+    }
+    .product-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: var(--wine-accent);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 2px;
+      font-weight: 500;
+    }
+    .wishlist-toggle {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(15, 14, 14, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-main);
+      transition: var(--trans-smooth);
+      z-index: 3;
+    }
+    .wishlist-toggle.active, .wishlist-toggle:hover {
+      color: #e04f5f;
+      border-color: #e04f5f;
+      background: rgba(40, 10, 15, 0.85);
+    }
+
+    .quick-actions {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px;
+      display: flex;
+      gap: 8px;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      background: linear-gradient(transparent, rgba(15, 14, 14, 0.9));
+      z-index: 3;
+    }
+    .product-card:hover .quick-actions {
+      transform: translateY(0);
+    }
+    .btn-quick {
+      flex: 1;
+      padding: 10px;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--bg-dark);
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      transition: var(--trans-smooth);
+    }
+    .btn-quick:hover {
+      background: var(--gold-light);
+      color: #000;
+    }
+
+    .product-info {
+      padding: 18px 16px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-cat {
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+    .product-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .current-price {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--gold-light);
+    }
+    .original-price {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      text-decoration: line-through;
+    }
+    .discount-percent {
+      font-size: 0.7rem;
+      color: #8ce196;
+      margin-left: auto;
+      font-weight: 500;
+    }
+
+    /* ==========================================================
+       6. PROMOTIONAL FESTIVE EDIT SECTION
+       ========================================================== */
+    .festive-banner {
+      position: relative;
+      margin: 80px 0;
+      height: 520px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .festive-banner-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(15,14,14,0.92) 20%, rgba(88,28,37,0.5) 70%, rgba(15,14,14,0.85)),
+        url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=2000&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.9);
+    }
+    .festive-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      padding: 0 40px;
+    }
+
+    /* ==========================================================
+       7. BRAND STORY / EDITORIAL
+       ========================================================== */
+    .brand-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .story-images {
+      position: relative;
+      padding-right: 30px;
+    }
+    .story-img-main {
+      border-radius: var(--radius-sm);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      width: 86%;
+    }
+    .story-img-floating {
+      position: absolute;
+      bottom: -35px;
+      right: 0;
+      width: 50%;
+      border: 3px solid var(--bg-dark);
+      border-radius: var(--radius-sm);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    }
+
+    /* ==========================================================
+       8. MODALS & DRAWERS (CART, PRODUCT DETAIL, SEARCH, CHECKOUT)
+       ========================================================== */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--trans-smooth);
+    }
+    .drawer-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .slide-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 480px;
+      background: #151413;
+      border-left: 1px solid var(--glass-border);
+      z-index: 2001;
+      transform: translateX(100%);
+      transition: var(--trans-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+    .slide-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .drawer-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+    }
+    .drawer-close {
+      color: var(--text-muted);
+      padding: 6px;
+    }
+    .drawer-close:hover {
+      color: #fff;
+    }
+
+    .drawer-body {
+      padding: 24px;
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
+    .drawer-footer {
+      padding: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #11100f;
+    }
+
+    /* Cart Item Card */
+    .cart-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .cart-item-img {
+      width: 80px;
+      height: 105px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+    }
+    .cart-item-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-item-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+    .cart-item-meta {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .cart-qty-control {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      width: fit-content;
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+    }
+    .cart-qty-btn {
+      font-size: 1rem;
+      color: var(--text-muted);
+      padding: 2px 6px;
+    }
+    .cart-qty-btn:hover {
+      color: #fff;
+    }
+
+    .cart-summary-line {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .cart-summary-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    /* Modal Center (Product Detail / Quick View / Checkout) */
+    .center-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      width: 92%;
+      max-width: 960px;
+      max-height: 90vh;
+      background: #141312;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+      z-index: 2002;
+      border-radius: var(--radius-md);
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--trans-smooth);
+    }
+    .center-modal.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    /* Product Detail Inside Modal */
+    .pdp-container {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+    }
+    .pdp-gallery {
+      position: relative;
+      background: #0f0e0e;
+    }
+    .pdp-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: 600px;
+    }
+    .pdp-details {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+    .pdp-title {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+    .pdp-price {
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      margin-bottom: 18px;
+    }
+    .pdp-desc {
+      font-size: 0.88rem;
+      color: #b7b0a7;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .selector-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .size-chips {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .size-chip {
+      min-width: 44px;
+      height: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--trans-smooth);
+    }
+    .size-chip.selected, .size-chip:hover {
+      border-color: var(--gold-light);
+      background: var(--gold-light);
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* Fullscreen Search Overlay */
+    .search-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 9, 9, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 3000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 20px 40px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--trans-smooth);
+    }
+    .search-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .search-box {
+      width: 100%;
+      max-width: 720px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid var(--gold-light);
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: #fff;
+      padding: 12px 50px 12px 0;
+      outline: none;
+    }
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Checkout Flow UI */
+    .checkout-wrap {
+      padding: 40px;
+    }
+    .checkout-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group.full {
+      grid-column: span 2;
+    }
+    .form-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .form-input {
+      background: #1c1a19;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 14px;
+      color: #fff;
+      font-size: 0.85rem;
+      border-radius: var(--radius-sm);
+      outline: none;
+      transition: var(--trans-smooth);
+    }
+    .form-input:focus {
+      border-color: var(--gold-light);
+    }
+    .payment-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .payment-method-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      background: #191817;
+    }
+    .payment-method-card.selected {
+      border-color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    /* ==========================================================
+       9. ADMIN BACKEND PROTOTYPE DRAWER/MODAL
+       ========================================================== */
+    .admin-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .admin-stat-card {
+      background: #1c1a19;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .admin-stat-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .admin-stat-val {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--gold-light);
+      margin-top: 4px;
+    }
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      text-align: left;
+    }
+    .admin-table th {
+      padding: 10px;
+      background: #1e1b1a;
+      color: var(--text-muted);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+    .admin-table td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    /* ==========================================================
+       10. FLOATING WHATSAPP & NOTIFICATIONS
+       ========================================================== */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 54px;
+      height: 54px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+      z-index: 1000;
+      transition: var(--trans-smooth);
+    }
+    .whatsapp-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 14px 35px rgba(37, 211, 102, 0.5);
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--wine-accent);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--gold-light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      z-index: 4000;
+      transition: var(--trans-smooth);
+      pointer-events: none;
+    }
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ==========================================================
+       11. LUXURY FOOTER
+       ========================================================== */
+    footer.main-footer {
+      background: #090909;
+      border-top: 1px solid var(--glass-border);
+      padding: 90px 0 30px;
+      font-size: 0.82rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.6fr;
+      gap: 50px;
+      margin-bottom: 70px;
+    }
+    .footer-col h4 {
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 22px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+    }
+    .footer-links a:hover {
+      color: var(--gold-light);
+      padding-left: 4px;
+    }
+    .newsletter-form {
+      display: flex;
+      margin-top: 16px;
+    }
+    .newsletter-input {
+      flex: 1;
+      background: #141312;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 12px 16px;
+      color: #fff;
+      font-size: 0.8rem;
+      border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+      outline: none;
+    }
+    .newsletter-btn {
+      background: var(--gold-light);
+      color: #000;
+      padding: 0 20px;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-dim);
+      font-size: 0.72rem;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* ==========================================================
+       12. MOBILE DEDICATED NAV & RESPONSIVENESS
+       ========================================================== */
+    .mobile-bottom-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 14, 14, 0.94);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid var(--glass-border);
+      z-index: 999;
+      height: 60px;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .mobile-bottom-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+    .mobile-bottom-item.active, .mobile-bottom-item:hover {
+      color: var(--gold-light);
+    }
+
+    @media (max-width: 1024px) {
+      .collection-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-title { font-size: 3rem; }
+      .brand-story { grid-template-columns: 1fr; gap: 40px; }
+      .story-images { padding-right: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-nav-toggle { display: block; }
+      .products-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .collection-grid { grid-template-columns: 1fr; }
+      .pdp-container { grid-template-columns: 1fr; }
+      .checkout-form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: span 1; }
+      .mobile-bottom-bar { display: flex; }
+      .hero-section { height: 80vh; }
+      .hero-title { font-size: 2.5rem; }
+      body { padding-bottom: 60px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .admin-stats-grid { grid-template-columns: 1fr; }
+      .whatsapp-btn { bottom: 76px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-banner">
+    Bespoke Indian Silhouettes &bull; Compliments on Domestic Shipping &bull; Craftsmanship in Kerala
+  </aside>
+
+  <!-- Sticky Luxury Navigation -->
+  <header class="main-header">
+    <div class="container nav-inner">
+      
+      <!-- Brand Identity -->
+      <a href="#" class="brand-logo" onclick="showView('home')">
+        <span class="brand-logo-title">VENIQE</span>
+        <span class="brand-logo-sub">BY AK &bull; BOUTIQUE</span>
+      </a>
+
+      <!-- Desktop Nav Categories -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" onclick="showView('home')">Home</a></li>
+          <li><a href="#shop" onclick="filterByCat('all')">Shop All</a></li>
+          <li><a href="#sarees" onclick="filterByCat('Sarees')">Sarees</a></li>
+          <li><a href="#kurtas" onclick="filterByCat('Kurtas')">Kurtas</a></li>
+          <li><a href="#festive" onclick="filterByCat('Festive')">Festive</a></li>
+          <li><a href="#about" onclick="scrollToSection('story-section')">Our Story</a></li>
+          <li><a href="#admin" onclick="openAdminModal()" class="text-gold">Admin Preview</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Icons -->
+      <div class="nav-actions">
+        <button class="nav-icon-btn" aria-label="Search" onclick="toggleSearchOverlay()">
+          <i data-lucide="search"></i>
+        </button>
+        <button class="nav-icon-btn" aria-label="Wishlist" onclick="showWishlistModal()">
+          <i data-lucide="heart"></i>
+          <span class="badge-count wishlist-count">0</span>
+        </button>
+        <button class="nav-icon-btn" aria-label="Bag" onclick="toggleCartDrawer()">
+          <i data-lucide="shopping-bag"></i>
+          <span class="badge-count cart-count">0</span>
+        </button>
+        <button class="mobile-nav-toggle nav-icon-btn" aria-label="Menu" onclick="toggleMobileMenu()">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN PAGE CONTENT (SPA STYLE) -->
+  <main id="app-main">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home-hero">
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="tagline">Curated Indian Luxury</span>
+          <h1 class="hero-title">Elegance, <em>Woven Differently.</em></h1>
+          <p class="hero-desc">
+            Discover bespoke ethnic silhouettes sculpted with artisanal heritage and refined modern aesthetics. Designed for your grand celebrations and elevated everyday grace.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#shop-section" class="btn-luxury btn-luxury-solid">Shop The Edit</a>
+            <a href="#collections-section" class="btn-luxury">Explore Collections</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURATED COLLECTIONS GRID -->
+    <section class="section-spacing" id="collections-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
+          <span class="tagline">Handcrafted Visions</span>
+          <h2 class="section-title">The Curated Edits</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Impeccable fabrics, handcrafted embroidery, and timeless silhouettes.</p>
+        </div>
+
+        <div class="collection-grid">
+          <!-- Saree Edit -->
+          <div class="collection-card" onclick="filterByCat('Sarees')">
+            <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=900&auto=format&fit=crop" alt="The Saree Edit" loading="lazy" />
+            <div class="collection-overlay">
+              <h3 class="collection-title">The Saree Edit</h3>
+              <p class="collection-sub">Timeless silhouettes. Modern poise.</p>
+              <span class="collection-link">Discover Sarees <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+            </div>
+          </div>
+          <!-- Kurta Edit -->
+          <div class="collection-card" onclick="filterByCat('Kurtas')">
+            <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=900&auto=format&fit=crop" alt="The Kurta Edit" loading="lazy" />
+            <div class="collection-overlay">
+              <h3 class="collection-title">The Kurta Edit</h3>
+              <p class="collection-sub">Effortless Indian sophistication.</p>
+              <span class="collection-link">Discover Kurtas <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+            </div>
+          </div>
+          <!-- Festive -->
+          <div class="collection-card" onclick="filterByCat('Festive')">
+            <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=900&auto=format&fit=crop" alt="Festive Collection" loading="lazy" />
+            <div class="collection-overlay">
+              <h3 class="collection-title">Festive Collection</h3>
+              <p class="collection-sub">Made for moments that linger forever.</p>
+              <span class="collection-link">Shop Festive <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+            </div>
+          </div>
+          <!-- Everyday Luxury -->
+          <div class="collection-card" onclick="filterByCat('Kurtas')">
+            <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=900&auto=format&fit=crop" alt="Everyday Luxury" loading="lazy" />
+            <div class="collection-overlay">
+              <h3 class="collection-title">Everyday Luxury</h3>
+              <p class="collection-sub">Elevated styles for refined living.</p>
+              <span class="collection-link">Explore Styles <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP & CATALOG SECTION -->
+    <section class="section-spacing" id="shop-section" style="background: #121110;">
+      <div class="container">
+        
+        <div class="filter-bar">
+          <div>
+            <span class="tagline">Our Signature Collection</span>
+            <h2 class="section-title" style="margin-bottom: 0;">Featured Repertoire</h2>
+          </div>
+
+          <!-- Category Selection -->
+          <div class="category-tabs">
+            <button class="cat-tab active" onclick="filterProducts('all', this)">All Creations</button>
+            <button class="cat-tab" onclick="filterProducts('Sarees', this)">Sarees</button>
+            <button class="cat-tab" onclick="filterProducts('Kurtas', this)">Kurtas & Sets</button>
+            <button class="cat-tab" onclick="filterProducts('Festive', this)">Festive Edit</button>
+            <button class="cat-tab" onclick="filterProducts('Anarkali', this)">Anarkalis</button>
+          </div>
+
+          <!-- Sort Select -->
+          <div class="sort-filter-group">
+            <select class="select-luxury" id="sortSelect" onchange="applySorting()">
+              <option value="featured">Sort: Featured</option>
+              <option value="low-high">Price: Low to High</option>
+              <option value="high-low">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Product Grid Container (Injected via JS) -->
+        <div class="products-grid" id="productGrid"></div>
+
+      </div>
+    </section>
+
+    <!-- PROMOTIONAL FESTIVE HERO BANNER -->
+    <section class="festive-banner">
+      <div class="festive-banner-bg"></div>
+      <div class="container">
+        <div class="festive-content">
+          <span class="tagline">The Royal Festive Edit</span>
+          <h2 class="section-title">Dress For Moments You Will Cherish Forever.</h2>
+          <p style="color: #ded6cc; margin-bottom: 28px; font-weight: 300; line-height: 1.7;">
+            Imbued with shimmering zari weaves, raw silks, and delicate cut-dana embroidery formulated by Kerala’s most proficient textile craftsmen.
+          </p>
+          <button class="btn-luxury btn-luxury-solid" onclick="filterByCat('Festive')">Shop The Festive Edit</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND EDITORIAL STORY SECTION -->
+    <section class="section-spacing" id="story-section">
+      <div class="container">
+        <div class="brand-story">
+          <div class="story-images">
+            <img class="story-img-main" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=900&auto=format&fit=crop" alt="Veniqe Heritage" loading="lazy" />
+            <img class="story-img-floating" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600&auto=format&fit=crop" alt="Detailed Embroidery" loading="lazy" />
+          </div>
+          <div>
+            <span class="tagline">Boutique Heritage</span>
+            <h2 class="section-title">A New Expression Of Indian Elegance</h2>
+            <p style="color: #b8b1a8; margin-bottom: 20px; line-height: 1.8;">
+              Born out of an uncompromising reverence for Indian drapery and modern femininity, <strong>Veniqe by AK</strong> stands as a destination where age-old weaving techniques meet fresh, architectural silhouettes.
+            </p>
+            <p style="color: #8c857c; margin-bottom: 30px; font-size: 0.9rem; line-height: 1.8;">
+              Every ensemble from our boutique atelier in Kodungallur, Kerala is thoughtfully curated with rich handlooms, bespoke jewel tones, and opulent textures meant to empower women at every occasion.
+            </p>
+            <div style="border-left: 2px solid var(--gold-light); padding-left: 20px; margin-bottom: 30px;">
+              <p style="font-family: var(--font-serif); font-size: 1.25rem; font-style: italic; color: #fff;">
+                "Fashion is an emotional silhouette. We don’t just tailor cloth; we weave grace into your moments."
+              </p>
+              <span style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); display: block; margin-top: 6px;">— AK, Founder & Creative Director</span>
+            </div>
+            <a href="https://wa.me/916238002245?text=Hello%20Veniqe%20by%20AK,%20I%20would%20like%20to%20know%20more%20about%20your%20brand%20and%20craft." target="_blank" class="btn-outline">Inquire About Bespoke Pieces</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================
+       CART SLIDE-OVER DRAWER
+       ========================================================== -->
+  <div class="drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
+  <aside class="slide-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Shopping Bag (<span class="cart-count">0</span>)</div>
+      <button class="drawer-close" onclick="toggleCartDrawer()"><i data-lucide="x"></i></button>
+    </div>
+    <div class="drawer-body" id="cartItemList">
+      <!-- Items dynamically populated -->
+      <div style="text-align: center; padding: 60px 20px; color: var(--text-dim);" id="cartEmptyMsg">
+        <i data-lucide="shopping-bag" style="width: 48px; height: 48px; stroke-width: 1; margin: 0 auto 16px;"></i>
+        <p>Your shopping bag is currently empty.</p>
+        <button class="btn-luxury" style="margin-top: 20px;" onclick="toggleCartDrawer(); scrollToSection('shop-section');">Discover Creations</button>
+      </div>
+    </div>
+    <div class="drawer-footer" id="cartFooterSection" style="display: none;">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">₹0</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Domestic Shipping (India)</span>
+        <span style="color: var(--gold-light);">Complimentary</span>
+      </div>
+      <div class="cart-summary-total">
+        <span>Total Payable</span>
+        <span id="cartTotal" class="text-gold">₹0</span>
+      </div>
+      <button class="btn-luxury btn-luxury-solid" style="width: 100%; margin-top: 18px;" onclick="openCheckoutModal()">
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================
+       PRODUCT DETAIL & QUICK VIEW MODAL
+       ========================================================== -->
+  <div class="drawer-overlay" id="pdpOverlay" onclick="closePdpModal()"></div>
+  <div class="center-modal" id="pdpModal">
+    <button class="modal-close-btn" onclick="closePdpModal()"><i data-lucide="x"></i></button>
+    <div class="pdp-container">
+      <div class="pdp-gallery">
+        <img id="pdpImg" src="" alt="Product view" />
+      </div>
+      <div class="pdp-details">
+        <span class="tagline" id="pdpCategory">SAREE</span>
+        <h2 class="pdp-title" id="pdpTitle">Ivory Pearl Silk Saree</h2>
+        <div class="pdp-price" id="pdpPrice">₹2,999</div>
+        <p class="pdp-desc" id="pdpDesc">
+          Crafted with luminous woven silk and complemented with delicate metallic accents. Designed for timeless celebratory appeal and comfortable all-day wear.
+        </p>
+
+        <span class="selector-label">Select Silhouette Size</span>
+        <div class="size-chips" id="pdpSizeGroup">
+          <div class="size-chip selected" onclick="selectSize(this)">Free Size</div>
+          <div class="size-chip" onclick="selectSize(this)">S</div>
+          <div class="size-chip" onclick="selectSize(this)">M</div>
+          <div class="size-chip" onclick="selectSize(this)">L</div>
+          <div class="size-chip" onclick="selectSize(this)">XL</div>
+        </div>
+
+        <div style="display: flex; gap: 14px; margin-bottom: 24px;">
+          <button class="btn-luxury btn-luxury-solid" style="flex: 1;" id="pdpAddToCartBtn" onclick="addCurrentPdpToCart()">
+            Add to Shopping Bag
+          </button>
+          <button class="btn-outline" id="pdpWishlistBtn" onclick="toggleCurrentPdpWishlist()">
+            <i data-lucide="heart" style="width: 18px; vertical-align: middle;"></i>
+          </button>
+        </div>
+
+        <!-- Accordions for Details -->
+        <div style="font-size: 0.78rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px;">
+          <details style="margin-bottom: 8px; cursor: pointer;">
+            <summary style="font-weight: 500; color: #fff;">Fabric & Artisan Care</summary>
+            <p style="color: var(--text-muted); margin-top: 8px;">Pure blended Banarasi Art Silk. Strictly dry clean only to preserve metallic thread integrity.</p>
+          </details>
+          <details style="cursor: pointer;">
+            <summary style="font-weight: 500; color: #fff;">Complimentary Kerala & Pan-India Delivery</summary>
+            <p style="color: var(--text-muted); margin-top: 8px;">Dispatched via premium express logistics from our Kodungallur boutique. Expected transit 3–5 working days.</p>
+          </details>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       CHECKOUT FLOW MODAL (PROTOTYPE ARCHITECTURE)
+       ========================================================== -->
+  <div class="drawer-overlay" id="checkoutOverlay" onclick="closeCheckoutModal()"></div>
+  <div class="center-modal" id="checkoutModal">
+    <button class="modal-close-btn" onclick="closeCheckoutModal()"><i data-lucide="x"></i></button>
+    <div class="checkout-wrap">
+      <span class="tagline">Encrypted & Secure Checkout</span>
+      <h2 class="section-title" style="margin-bottom: 20px;">Shipping & Details</h2>
+      
+      <form id="checkoutForm" onsubmit="handlePlaceOrder(event)">
+        <div class="checkout-form-grid">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" required placeholder="e.g. Anjali Menon" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mobile Number</label>
+            <input type="tel" class="form-input" required placeholder="+91 9876543210" />
+          </div>
+          <div class="form-group full">
+            <label class="form-label">Delivery Address</label>
+            <input type="text" class="form-input" required placeholder="House / Flat No, Street, Landmark" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">City / Town</label>
+            <input type="text" class="form-input" required placeholder="Kodungallur / Kochi" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">PIN Code</label>
+            <input type="text" class="form-input" required placeholder="680667" />
+          </div>
+        </div>
+
+        <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin: 30px 0 14px;">Select Payment Experience</h3>
+        <div class="payment-options">
+          <label class="payment-method-card selected">
+            <input type="radio" name="payment" value="upi" checked />
+            <div>
+              <strong>Instant UPI / QR (Razorpay Ready)</strong>
+              <div style="font-size: 0.72rem; color: var(--text-dim);">Google Pay, PhonePe, Paytm, BHIM</div>
+            </div>
+          </label>
+          <label class="payment-method-card">
+            <input type="radio" name="payment" value="cards" />
+            <div>
+              <strong>Credit / Debit Card</strong>
+              <div style="font-size: 0.72rem; color: var(--text-dim);">Visa, Mastercard, RuPay, Amex</div>
+            </div>
+          </label>
+          <label class="payment-method-card">
+            <input type="radio" name="payment" value="cod" />
+            <div>
+              <strong>Cash On Delivery (Boutique Confirmed)</strong>
+              <div style="font-size: 0.72rem; color: var(--text-dim);">Pay comfortably at your doorstep</div>
+            </div>
+          </label>
+        </div>
+
+        <div style="background: #191817; padding: 18px; border-radius: var(--radius-sm); margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span>Total Payable Amount:</span>
+            <strong class="text-gold" id="checkoutFinalAmount">₹0</strong>
+          </div>
+          <small style="color: var(--text-dim);">Note: Frontend prototype simulation. Ready for direct Razorpay / Stripe webhook integration.</small>
+        </div>
+
+        <button type="submit" class="btn-luxury btn-luxury-solid" style="width: 100%;">Complete Order Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       FULLSCREEN SEARCH OVERLAY
+       ========================================================== -->
+  <div class="search-overlay" id="searchOverlay">
+    <button class="modal-close-btn" style="top: 30px; right: 30px;" onclick="toggleSearchOverlay()"><i data-lucide="x"></i></button>
+    <div class="search-box">
+      <input type="text" class="search-input" id="globalSearchInput" placeholder="Search sarees, kurtas, velvet..." oninput="handleSearch(this.value)" />
+      <div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <span style="color: var(--text-dim); font-size: 0.76rem; letter-spacing: 0.1em;">Popular Curations:</span>
+        <button class="cat-tab" onclick="applySearchTag('Silk Saree')">Silk Saree</button>
+        <button class="cat-tab" onclick="applySearchTag('Velvet')">Velvet</button>
+        <button class="cat-tab" onclick="applySearchTag('Kurta')">Kurta</button>
+        <button class="cat-tab" onclick="applySearchTag('Ivory')">Ivory</button>
+      </div>
+      <div id="searchResults" style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px;"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       ADMIN STORE MANAGEMENT PREVIEW DRAWER
+       ========================================================== -->
+  <div class="drawer-overlay" id="adminOverlay" onclick="closeAdminModal()"></div>
+  <div class="center-modal" id="adminModal" style="max-width: 900px; padding: 36px;">
+    <button class="modal-close-btn" onclick="closeAdminModal()"><i data-lucide="x"></i></button>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px;">
+      <div>
+        <span class="tagline">Store Management Architecture</span>
+        <h2 style="font-family: var(--font-serif); font-size: 2rem;">Veniqe Atelier Dashboard</h2>
+      </div>
+      <span style="font-size: 0.7rem; letter-spacing: 0.15em; background: rgba(212,175,55,0.15); color: var(--gold-light); padding: 4px 10px; border-radius: 4px;">BACKEND-READY CONTROLLER</span>
+    </div>
+
+    <div class="admin-stats-grid">
+      <div class="admin-stat-card">
+        <div class="admin-stat-label">Total Revenue</div>
+        <div class="admin-stat-val">₹4,28,450</div>
+      </div>
+      <div class="admin-stat-card">
+        <div class="admin-stat-label">Active Orders</div>
+        <div class="admin-stat-val">24 Orders</div>
+      </div>
+      <div class="admin-stat-card">
+        <div class="admin-stat-label">Live Inventory</div>
+        <div class="admin-stat-val">24 Products</div>
+      </div>
+    </div>
+
+    <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 14px;">Recent Boutique Orders</h3>
+    <div style="overflow-x: auto;">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Location</th>
+            <th>Items</th>
+            <th>Total</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#VNQ-8491</td>
+            <td>Meera Nambiar</td>
+            <td>Ernakulam, KL</td>
+            <td>Ivory Pearl Silk Saree</td>
+            <td>₹2,999</td>
+            <td><span style="color: #6ce48b;">Processing</span></td>
+          </tr>
+          <tr>
+            <td>#VNQ-8490</td>
+            <td>Deepa Varma</td>
+            <td>Kodungallur, KL</td>
+            <td>Wine Velvet Kurta Set</td>
+            <td>₹2,299</td>
+            <td><span style="color: #d4af37;">Dispatched</span></td>
+          </tr>
+          <tr>
+            <td>#VNQ-8489</td>
+            <td>Sanjana Rao</td>
+            <td>Bangalore, KA</td>
+            <td>Rose Beige Anarkali Set</td>
+            <td>₹2,499</td>
+            <td><span style="color: #6ce48b;">Delivered</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top: 24px; display: flex; gap: 14px;">
+      <button class="btn-luxury btn-luxury-solid" onclick="showToast('Database sync ready for Firebase/Supabase/REST API')">Sync Mock Inventory</button>
+      <button class="btn-outline" onclick="closeAdminModal()">Close Controller</button>
+    </div>
+  </div>
+
+  <!-- FLOATING LUXURY WHATSAPP BUTTON -->
+  <a href="https://wa.me/916238002245?text=Hi%20Veniqe%20by%20AK,%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+    <i data-lucide="message-circle" style="width: 28px; height: 28px;"></i>
+  </a>
+
+  <!-- INTERACTIVE TOAST NOTIFICATION -->
+  <div class="toast-msg" id="toastMessage">Item added to your bag</div>
+
+  <!-- ==========================================================
+       MOBILE BOTTOM NAVIGATION
+       ========================================================== -->
+  <div class="mobile-bottom-bar">
+    <a href="#home" class="mobile-bottom-item" onclick="showView('home')">
+      <i data-lucide="home" style="width: 18px;"></i>
+      <span>Home</span>
+    </a>
+    <a href="#shop-section" class="mobile-bottom-item" onclick="scrollToSection('shop-section')">
+      <i data-lucide="compass" style="width: 18px;"></i>
+      <span>Shop</span>
+    </a>
+    <a href="javascript:void(0)" class="mobile-bottom-item" onclick="toggleSearchOverlay()">
+      <i data-lucide="search" style="width: 18px;"></i>
+      <span>Search</span>
+    </a>
+    <a href="javascript:void(0)" class="mobile-bottom-item" onclick="toggleCartDrawer()">
+      <i data-lucide="shopping-bag" style="width: 18px;"></i>
+      <span>Bag (<span class="cart-count">0</span>)</span>
+    </a>
+  </div>
+
+  <!-- ==========================================================
+       FOOTER
+       ========================================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Summary -->
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <span class="brand-logo-title" style="font-size: 1.5rem;">VENIQE</span>
+            <span class="brand-logo-sub">BY AK</span>
+          </div>
+          <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 22px; max-width: 320px;">
+            Elegance, Woven Differently. Distinctive contemporary Indian women's fashion curated with artisanal precision and timeless grace.
+          </p>
+          <div style="font-size: 0.8rem; color: #d0c8be; line-height: 1.7;">
+            <strong>Atelier Address:</strong><br>
+            2nd Floor, Opp. Indus Motors,<br>
+            Keetholi, Kodungallur, Kerala – 680667, India<br>
+            <span style="color: var(--gold-light); display: inline-block; margin-top: 4px;">Direct Concierge: +91 6238002245</span>
+          </div>
+        </div>
+
+        <!-- Shop Links -->
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="filterByCat('Sarees')">Heritage Sarees</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCat('Kurtas')">Designer Kurta Sets</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCat('Festive')">Festive Silhouettes</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCat('Anarkali')">Boutique Anarkalis</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCat('all')">New Arrivals</a></li>
+          </ul>
+        </div>
+
+        <!-- Information -->
+        <div class="footer-col">
+          <h4>Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="scrollToSection('story-section')">About Our Atelier</a></li>
+            <li><a href="https://wa.me/916238002245" target="_blank">Order Consultation</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('Complimentary shipping pan-India')">Shipping Information</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('Returns accepted within 7 days for boutique store credit')">Exchange Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="openAdminModal()">Atelier Admin Panel</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-col">
+          <h4>Join The Veniqe List</h4>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 14px;">
+            Be the first to access private previews, exclusive bridal collections, and seasonal drops.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Welcome to the Veniqe Society.');">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required />
+            <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+          </form>
+          <div style="display: flex; gap: 16px; margin-top: 24px; color: var(--gold-light);">
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i data-lucide="instagram" style="width: 20px;"></i></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i data-lucide="facebook" style="width: 20px;"></i></a>
+            <a href="https://wa.me/916238002245" target="_blank" aria-label="WhatsApp"><i data-lucide="message-circle" style="width: 20px;"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Veniqe by AK. All Rights Reserved. Crafted with high-fashion aesthetics.</div>
+        <div style="display: flex; gap: 20px;">
+          <span>Kodungallur, Kerala</span>
+          <span>Privacy Policy</span>
+          <span>Terms of Grace</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================
+       13. JAVASCRIPT STATE, MOCK DATABASE & LOGIC
+       ========================================================== -->
+  <script>
+    /* ----------------------------------------------------------
+       CENTRAL CATALOG DATABASE (MODULAR & EASILY REPLACEABLE)
+       ---------------------------------------------------------- */
+    const PRODUCTS_DATA = [
+      // 8 SAREES
+      {
+        id: 'sar-01',
+        title: 'Ivory Pearl Silk Saree',
+        category: 'Sarees',
+        tag: 'Best Seller',
+        price: 2999,
+        originalPrice: 4299,
+        image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop',
+        desc: 'Delicately woven pure banarasi style art silk featuring shimmering champagne zari border and soft pearl sheen.'
+      },
+      {
+        id: 'sar-02',
+        title: 'Wine Heritage Saree',
+        category: 'Sarees',
+        tag: 'Festive Pick',
+        price: 3499,
+        originalPrice: 4999,
+        image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop',
+        desc: 'Deep royal wine tone enriched with intricate floral cutwork and heritage pallu detailing.'
+      },
+      {
+        id: 'sar-03',
+        title: 'Champagne Elegance Saree',
+        category: 'Sarees',
+        tag: 'Curators Choice',
+        price: 2799,
+        originalPrice: 3899,
+        image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop',
+        desc: 'Minimal yet extravagant champagne metallic sheen crafted for intimate receptions and evening soirees.'
+      },
+      {
+        id: 'sar-04',
+        title: 'Midnight Black Designer Saree',
+        category: 'Sarees',
+        tag: 'Exclusive',
+        price: 3999,
+        originalPrice: 5499,
+        image: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=800&auto=format&fit=crop',
+        desc: 'Charcoal midnight palette paired with fine sequined motifs for an unforgettable nocturnal statement.'
+      },
+      {
+        id: 'sar-05',
+        title: 'Rose Gold Tissue Saree',
+        category: 'Sarees',
+        tag: 'New Arrival',
+        price: 3699,
+        originalPrice: 4899,
+        image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop',
+        desc: 'Lightweight gossamer tissue weave catching ambient luminescence effortlessly.'
+      },
+      {
+        id: 'sar-06',
+        title: 'Royal Emerald Organza Saree',
+        category: 'Sarees',
+        tag: 'Handloom',
+        price: 3199,
+        originalPrice: 4599,
+        image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop',
+        desc: 'Translucent organza fabric embellished with fine scalloped borders and hand-embroidered buttis.'
+      },
+      {
+        id: 'sar-07',
+        title: 'Blush Pink Chiffon Drape',
+        category: 'Sarees',
+        tag: 'Trending',
+        price: 2499,
+        originalPrice: 3499,
+        image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop',
+        desc: 'Fluid pure georgette-chiffon composition draping in flawless feminine ripples.'
+      },
+      {
+        id: 'sar-08',
+        title: 'Kanchipuram Mustard Zari Saree',
+        category: 'Sarees',
+        tag: 'Festive',
+        price: 4499,
+        originalPrice: 5999,
+        image: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=800&auto=format&fit=crop',
+        desc: 'Traditional heritage weave accented with pure temple border motifs and authentic zari work.'
+      },
+
+      // 8 KURTAS & SETS
+      {
+        id: 'kur-01',
+        title: 'Ivory Embroidered Kurta Set',
+        category: 'Kurtas',
+        tag: 'Best Seller',
+        price: 1899,
+        originalPrice: 2799,
+        image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop',
+        desc: 'Fine chanderi cotton kurta with tonal thread embroidery paired with straight trousers and dupatta.'
+      },
+      {
+        id: 'kur-02',
+        title: 'Wine Velvet Kurta Set',
+        category: 'Kurtas',
+        tag: 'Festive Edit',
+        price: 2299,
+        originalPrice: 3299,
+        image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop',
+        desc: 'Rich plush micro-velvet tailored for winter weddings and cool evening festivities.'
+      },
+      {
+        id: 'kur-03',
+        title: 'Rose Beige Anarkali Set',
+        category: 'Kurtas',
+        tag: 'Statement',
+        price: 2499,
+        originalPrice: 3699,
+        image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop',
+        desc: 'Voluminous flared silhouette crafted with delicate gotta patti work on yoke.'
+      },
+      {
+        id: 'kur-04',
+        title: 'Black Embroidered Kurta',
+        category: 'Kurtas',
+        tag: 'Essential',
+        price: 1799,
+        originalPrice: 2499,
+        image: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=800&auto=format&fit=crop',
+        desc: 'Pure breathable modal silk featuring champagne thread collar and sleeve enhancements.'
+      },
+      {
+        id: 'kur-05',
+        title: 'Olive Raw Silk Kurta Set',
+        category: 'Kurtas',
+        tag: 'New',
+        price: 2199,
+        originalPrice: 2999,
+        image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop',
+        desc: 'Earthy luxury tone featuring delicate potli button closures and flared palazzo.'
+      },
+      {
+        id: 'kur-06',
+        title: 'Dusty Peach Mirror Work Set',
+        category: 'Kurtas',
+        tag: 'Festive',
+        price: 2599,
+        originalPrice: 3499,
+        image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop',
+        desc: 'Fine authentic mirror accents reflecting festive candlelight with breathtaking subtlety.'
+      },
+      {
+        id: 'kur-07',
+        title: 'Teal Blue Straight Cut Set',
+        category: 'Kurtas',
+        tag: 'Office Luxury',
+        price: 1699,
+        originalPrice: 2299,
+        image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop',
+        desc: 'Crisp hand-spun linen blend with minimalist mandarin neckline and side slits.'
+      },
+      {
+        id: 'kur-08',
+        title: 'Gold Marori Embroidered Kurta',
+        category: 'Kurtas',
+        tag: 'Couture',
+        price: 2899,
+        originalPrice: 3999,
+        image: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=800&auto=format&fit=crop',
+        desc: 'Signature royal silhouette finished with classic marori metallic embroidery.'
+      },
+
+      // 4 ANARKALI & FESTIVE PICKS
+      {
+        id: 'fest-01',
+        title: 'Royal Burgundy Kalidar Gown',
+        category: 'Festive',
+        tag: 'Showstopper',
+        price: 4999,
+        originalPrice: 6999,
+        image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop',
+        desc: 'Flared 32-kali ethnic evening silhouette adorned with heritage zardozi craftsmanship.'
+      },
+      {
+        id: 'fest-02',
+        title: 'Ivory Floral Chikankari Anarkali',
+        category: 'Anarkali',
+        tag: 'Artisanal',
+        price: 3799,
+        originalPrice: 5299,
+        image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop',
+        desc: 'Intricate Lucknowi chikan stitches enhanced with pearl beads on sheer georgette.'
+      },
+      {
+        id: 'fest-03',
+        title: 'Champagne Sequin Cocktail Suit',
+        category: 'Festive',
+        tag: 'Couture',
+        price: 4299,
+        originalPrice: 5999,
+        image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop',
+        desc: 'Contemporary luxury Indian silhouette studded with micro champagne shimmer sequins.'
+      },
+      {
+        id: 'fest-04',
+        title: 'Maroon Heritage Brocade Anarkali',
+        category: 'Anarkali',
+        tag: 'Bridal Edit',
+        price: 5499,
+        originalPrice: 7999,
+        image: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=800&auto=format&fit=crop',
+        desc: 'Regal Banarasi brocade flared ensemble framed with antique gold piping.'
+      }
+    ];
+
+    /* ----------------------------------------------------------
+       APPLICATION GLOBAL STATE
+       ---------------------------------------------------------- */
+    let cart = [];
+    let wishlist = [];
+    let activeFilter = 'all';
+    let currentPdpProduct = null;
+
+    /* ----------------------------------------------------------
+       INITIALIZATION
+       ---------------------------------------------------------- */
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      renderProducts(PRODUCTS_DATA);
+      updateBadges();
+    });
+
+    /* ----------------------------------------------------------
+       PRODUCT RENDERING & FILTERING
+       ---------------------------------------------------------- */
+    function renderProducts(items) {
+      const grid = document.getElementById('productGrid');
+      if (!grid) return;
+
+      if (items.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--text-dim);">
+            <p style="font-size: 1.1rem; font-family: var(--font-serif);">No exquisite pieces found in this category.</p>
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = items.map(product => {
+        const isWished = wishlist.includes(product.id);
+        const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+
+        return `
+          <article class="product-card" data-id="${product.id}">
+            <div class="product-media">
+              <img src="${product.image}" alt="${product.title}" loading="lazy" />
+              <span class="product-tag">${product.tag}</span>
+              <button class="wishlist-toggle ${isWished ? 'active' : ''}" 
+                      aria-label="Wishlist" 
+                      onclick="toggleWishlist('${product.id}', event)">
+                <i data-lucide="heart" style="width: 16px; height: 16px; ${isWished ? 'fill: currentColor;' : ''}"></i>
+              </button>
+              <div class="quick-actions">
+                <button class="btn-quick" onclick="openProductDetail('${product.id}')">Quick View</button>
+                <button class="btn-quick" onclick="addToBag('${product.id}', 'Free Size', event)">Add To Bag</button>
+              </div>
+            </div>
+            <div class="product-info" onclick="openProductDetail('${product.id}')" style="cursor: pointer;">
+              <span class="product-cat">${product.category}</span>
+              <h3 class="product-title">${product.title}</h3>
+              <div class="price-row">
+                <span class="current-price">₹${product.price.toLocaleString('en-IN')}</span>
+                <span class="original-price">₹${product.originalPrice.toLocaleString('en-IN')}</span>
+                <span class="discount-percent">${discount}% OFF</span>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function filterProducts(category, element) {
+      activeFilter = category;
+      if (element) {
+        document.querySelectorAll('.cat-tab').forEach(btn => btn.classList.remove('active'));
+        element.classList.add('active');
+      }
+
+      let filtered = PRODUCTS_DATA;
+      if (category !== 'all') {
+        filtered = PRODUCTS_DATA.filter(item => item.category.toLowerCase() === category.toLowerCase());
+      }
+      renderProducts(filtered);
+    }
+
+    function filterByCat(category) {
+      scrollToSection('shop-section');
+      const targetBtn = Array.from(document.querySelectorAll('.cat-tab')).find(b => 
+        b.textContent.trim().toLowerCase().includes(category.toLowerCase()) || 
+        (category === 'all' && b.textContent.includes('All'))
+      );
+      filterProducts(category, targetBtn);
+    }
+
+    function applySorting() {
+      const criteria = document.getElementById('sortSelect').value;
+      let workingList = [...PRODUCTS_DATA];
+      
+      if (activeFilter !== 'all') {
+        workingList = workingList.filter(item => item.category.toLowerCase() === activeFilter.toLowerCase());
+      }
+
+      if (criteria === 'low-high') {
+        workingList.sort((a, b) => a.price - b.price);
+      } else if (criteria === 'high-low') {
+        workingList.sort((a, b) => b.price - a.price);
+      }
+      renderProducts(workingList);
+    }
+
+    /* ----------------------------------------------------------
+       SHOPPING BAG (CART) LOGIC
+       ---------------------------------------------------------- */
+    function addToBag(productId, size = 'Free Size', e) {
+      if (e) e.stopPropagation();
+      const product = PRODUCTS_DATA.find(p => p.id === productId);
+      if (!product) return;
+
+      const existing = cart.find(item => item.id === productId && item.size === size);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          image: product.image,
+          size: size,
+          qty: 1
+        });
+      }
+
+      updateBadges();
+      renderCartDrawer();
+      showToast(`Added "${product.title}" to bag`);
+      toggleCartDrawer(true);
+    }
+
+    function changeCartQty(index, delta) {
+      if (cart[index]) {
+        cart[index].qty += delta;
+        if (cart[index].qty <= 0) {
+          cart.splice(index, 1);
+        }
+      }
+      updateBadges();
+      renderCartDrawer();
+    }
+
+    function renderCartDrawer() {
+      const container = document.getElementById('cartItemList');
+      const footer = document.getElementById('cartFooterSection');
+      const emptyMsg = document.getElementById('cartEmptyMsg');
+
+      if (cart.length === 0) {
+        container.innerHTML = '';
+        container.appendChild(emptyMsg);
+        emptyMsg.style.display = 'block';
+        footer.style.display = 'none';
+        return;
+      }
+
+      emptyMsg.style.display = 'none';
+      let subtotal = 0;
+
+      container.innerHTML = cart.map((item, idx) => {
+        subtotal += item.price * item.qty;
+        return `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.title}" class="cart-item-img" />
+            <div class="cart-item-info">
+              <h4 class="cart-item-title">${item.title}</h4>
+              <span class="cart-item-meta">Size: ${item.size} &bull; ₹${item.price.toLocaleString('en-IN')}</span>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                <div class="cart-qty-control">
+                  <button class="cart-qty-btn" onclick="changeCartQty(${idx}, -1)">-</button>
+                  <span style="font-size: 0.8rem;">${item.qty}</span>
+                  <button class="cart-qty-btn" onclick="changeCartQty(${idx}, 1)">+</button>
+                </div>
+                <button onclick="changeCartQty(${idx}, -${item.qty})" style="color: var(--text-dim); font-size: 0.72rem;">Remove</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('cartSubtotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+      document.getElementById('cartTotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+      document.getElementById('checkoutFinalAmount').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+      footer.style.display = 'block';
+      lucide.createIcons();
+    }
+
+    function toggleCartDrawer(forceOpen = null) {
+      const drawer = document.getElementById('cartDrawer');
+      const overlay = document.getElementById('cartOverlay');
+      const isOpen = drawer.classList.contains('open');
+
+      if (forceOpen === true || !isOpen) {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        renderCartDrawer();
+      } else {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+    }
+
+    /* ----------------------------------------------------------
+       WISHLIST LOGIC
+       ---------------------------------------------------------- */
+    function toggleWishlist(productId, e) {
+      if (e) e.stopPropagation();
+      const idx = wishlist.indexOf(productId);
+      if (idx > -1) {
+        wishlist.splice(idx, 1);
+        showToast('Removed from your Wishlist');
+      } else {
+        wishlist.push(productId);
+        showToast('Saved to your Wishlist');
+      }
+      updateBadges();
+      // Update UI heart icons
+      document.querySelectorAll(`.product-card[data-id="${productId}"] .wishlist-toggle`).forEach(btn => {
+        btn.classList.toggle('active', wishlist.includes(productId));
+      });
+    }
+
+    function showWishlistModal() {
+      if (wishlist.length === 0) {
+        showToast('Your wishlist is empty. Tap ♡ on items to curate.');
+        return;
+      }
+      const wishedItems = PRODUCTS_DATA.filter(p => wishlist.includes(p.id));
+      renderProducts(wishedItems);
+      scrollToSection('shop-section');
+      showToast(`Showing ${wishedItems.length} wishlist items`);
+    }
+
+    function updateBadges() {
+      const totalCartQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.querySelectorAll('.cart-count').forEach(el => el.textContent = totalCartQty);
+      document.querySelectorAll('.wishlist-count').forEach(el => el.textContent = wishlist.length);
+    }
+
+    /* ----------------------------------------------------------
+       PRODUCT DETAIL (PDP) MODAL
+       ---------------------------------------------------------- */
+    function openProductDetail(productId) {
+      const product = PRODUCTS_DATA.find(p => p.id === productId);
+      if (!product) return;
+
+      currentPdpProduct = product;
+      document.getElementById('pdpImg').src = product.image;
+      document.getElementById('pdpCategory').textContent = product.category;
+      document.getElementById('pdpTitle').textContent = product.title;
+      document.getElementById('pdpPrice').textContent = `₹${product.price.toLocaleString('en-IN')}`;
+      document.getElementById('pdpDesc').textContent = product.desc;
+
+      const modal = document.getElementById('pdpModal');
+      const overlay = document.getElementById('pdpOverlay');
+      modal.classList.add('open');
+      overlay.classList.add('open');
+      lucide.createIcons();
+    }
+
+    function closePdpModal() {
+      document.getElementById('pdpModal').classList.remove('open');
+      document.getElementById('pdpOverlay').classList.remove('open');
+      currentPdpProduct = null;
+    }
+
+    function selectSize(element) {
+      document.querySelectorAll('.size-chip').forEach(c => c.classList.remove('selected'));
+      element.classList.add('selected');
+    }
+
+    function addCurrentPdpToCart() {
+      if (!currentPdpProduct) return;
+      const selectedSizeEl = document.querySelector('.size-chip.selected');
+      const size = selectedSizeEl ? selectedSizeEl.textContent : 'Free Size';
+      addToBag(currentPdpProduct.id, size);
+      closePdpModal();
+    }
+
+    function toggleCurrentPdpWishlist() {
+      if (currentPdpProduct) {
+        toggleWishlist(currentPdpProduct.id);
+      }
+    }
+
+    /* ----------------------------------------------------------
+       SEARCH SYSTEM
+       ---------------------------------------------------------- */
+    function toggleSearchOverlay() {
+      const overlay = document.getElementById('searchOverlay');
+      const isOpen = overlay.classList.contains('open');
+      if (isOpen) {
+        overlay.classList.remove('open');
+      } else {
+        overlay.classList.add('open');
+        document.getElementById('globalSearchInput').focus();
+      }
+    }
+
+    function handleSearch(query) {
+      const container = document.getElementById('searchResults');
+      if (!query || query.trim().length < 2) {
+        container.innerHTML = '';
+        return;
+      }
+      const q = query.toLowerCase();
+      const results = PRODUCTS_DATA.filter(p => 
+        p.title.toLowerCase().includes(q) || 
+        p.category.toLowerCase().includes(q) || 
+        p.desc.toLowerCase().includes(q)
+      );
+
+      if (results.length === 0) {
+        container.innerHTML = `<div style="color: var(--text-dim); grid-column: span 2;">No boutique creations found matching "${query}"</div>`;
+        return;
+      }
+
+      container.innerHTML = results.slice(0, 4).map(p => `
+        <div style="display: flex; gap: 14px; background: #161514; padding: 10px; border-radius: var(--radius-sm); cursor: pointer;" 
+             onclick="toggleSearchOverlay(); openProductDetail('${p.id}')">
+          <img src="${p.image}" style="width: 60px; height: 75px; object-fit: cover; border-radius: 2px;" />
+          <div>
+            <h5 style="font-family: var(--font-serif); font-size: 1.05rem;">${p.title}</h5>
+            <span style="font-size: 0.7rem; color: var(--gold-light);">₹${p.price.toLocaleString('en-IN')}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function applySearchTag(tag) {
+      document.getElementById('globalSearchInput').value = tag;
+      handleSearch(tag);
+    }
+
+    /* ----------------------------------------------------------
+       CHECKOUT & ORDER DISPATCH SIMULATION
+       ---------------------------------------------------------- */
+    function openCheckoutModal() {
+      if (cart.length === 0) {
+        showToast('Please add items to your bag first');
+        return;
+      }
+      toggleCartDrawer(false);
+      document.getElementById('checkoutModal').classList.add('open');
+      document.getElementById('checkoutOverlay').classList.add('open');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.remove('open');
+      document.getElementById('checkoutOverlay').classList.remove('open');
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      closeCheckoutModal();
+      
+      const orderId = 'VNQ-' + Math.floor(100000 + Math.random() * 900000);
+      showToast(`Congratulations! Order #${orderId} booked successfully.`);
+      
+      // Clear Cart
+      cart = [];
+      updateBadges();
+      renderCartDrawer();
+    }
+
+    /* ----------------------------------------------------------
+       ADMIN BACKEND PROTOTYPE MODAL
+       ---------------------------------------------------------- */
+    function openAdminModal() {
+      document.getElementById('adminModal').classList.add('open');
+      document.getElementById('adminOverlay').classList.add('open');
+    }
+    function closeAdminModal() {
+      document.getElementById('adminModal').classList.remove('open');
+      document.getElementById('adminOverlay').classList.remove('open');
+    }
+
+    /* ----------------------------------------------------------
+       UI UTILITIES: TOAST & SCROLL
+       ---------------------------------------------------------- */
+    function showToast(message) {
+      const toast = document.getElementById('toastMessage');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3400);
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function toggleMobileMenu() {
+      scrollToSection('shop-section');
+    }
+
+    function showView(view) {
+      if (view === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        renderProducts(PRODUCTS_DATA);
+      }
+    }
+  </script>
+</body>
+</html>
 
